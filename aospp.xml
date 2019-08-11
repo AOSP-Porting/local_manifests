@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch="https://github.com/" />
+
+  <!-- Additions -->
+  <project path="device/qcom/sepolicy" name="AOSP-Porting/platform_device_qcom_sepolicy" remote="github" revision="pie" />
+  <project path="external/google-fonts/google-sans" name="AOSP-Porting/platform_external_google-fonts_google-sans" remote="github" revision="pie" />
+  <project path="packages/overlays/Accents" name="AOSP-Porting/platform_packages_overlays_Accents" remote="github" revision="pie" />
+  <project path="vendor/aosp" name="AOSP-Porting/platform_vendor_aosp" remote="github" revision="pie" />
+  <project path="vendor/qcom/opensource/cryptfs_hw" name="AOSP-Porting/platform_vendor_qcom_opensource_cryptfs_hw" remote="github" revision="pie" />
+  <project path="vendor/qcom/opensource/dtbtool" name="Alberto97/platform_vendor_qcom-opensource_dtbtool" remote="github" revision="pie" />
+
+  <!-- AOSP Replaced-->
+  <remove-project path="bionic" name="platform/bionic" groups="pdk" />
+  <remove-project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
+  <remove-project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
+  <remove-project path="build/make" name="platform/build" groups="pdk" />
+  <remove-project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" />
+  <remove-project path="external/selinux" name="platform/external/selinux" groups="pdk" />
+  <remove-project path="external/tinycompress" name="platform/external/tinycompress" groups="pdk" />
+  <remove-project path="frameworks/av" name="platform/frameworks/av" groups="pdk" />
+  <remove-project path="frameworks/base" name="platform/frameworks/base" groups="pdk-cw-fs,pdk-fs" />
+  <remove-project path="frameworks/opt/telephony" name="platform/frameworks/opt/telephony" groups="pdk" />
+  <remove-project path="hardware/nxp/nfc" name="platform/hardware/nxp/nfc" groups="pdk" />
+  <remove-project path="hardware/qcom/audio" name="platform/hardware/qcom/audio" groups="qcom,qcom_audio,pdk" />
+  <remove-project path="hardware/qcom/bt" name="platform/hardware/qcom/bt" groups="qcom,pdk" />
+  <remove-project path="hardware/qcom/display" name="platform/hardware/qcom/display" groups="pdk,qcom,qcom_display" />
+  <remove-project path="hardware/qcom/media" name="platform/hardware/qcom/media" groups="qcom,pdk" />
+  <remove-project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk" />
+  <remove-project path="packages/apps/Contacts" name="platform/packages/apps/Contacts" groups="pdk-fs" />
+  <remove-project path="packages/apps/Messaging" name="platform/packages/apps/Messaging" groups="pdk-fs" />
+  <remove-project path="packages/apps/Settings" name="platform/packages/apps/Settings" groups="pdk-fs" />
+  <remove-project path="packages/inputmethods/LatinIME" name="platform/packages/inputmethods/LatinIME" groups="pdk-fs" />
+  <remove-project path="packages/services/Telephony" name="platform/packages/services/Telephony" groups="pdk-cw-fs,pdk-fs" />
+  <remove-project path="system/bt" name="platform/system/bt" groups="pdk" />
+  <remove-project path="system/core" name="platform/system/core" groups="pdk" />
+  <remove-project path="system/sepolicy" name="platform/system/sepolicy" groups="pdk" />
+  <remove-project path="system/vold" name="platform/system/vold" groups="pdk" />
+
+  <project path="bionic" name="AOSP-Porting/platform_bionic" remote="github" revision="pie" />
+  <project path="bootable/recovery" name="AOSP-Porting/platform_bootable_recovery" remote="github" revision="pie" />
+  <project path="build/kati" name="AOSP-Porting/platform_build_kati" remote="github" revision="pie" />
+  <project path="build/make" name="AOSP-Porting/platform_build" remote="github" revision="pie" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="AOSP-Porting/platform_build_soong" remote="github" revision="pie" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="external/selinux" name="AOSP-Porting/platform_external_selinux" remote="github" revision="pie" />
+  <project path="external/tinycompress" name="AOSP-Porting/platform_external_tinycompress" remote="github" revision="pie" />
+  <project path="frameworks/av" name="AOSP-Porting/platform_frameworks_av" remote="github" revision="pie" />
+  <project path="frameworks/base" name="AOSP-Porting/platform_frameworks_base" remote="github" revision="pie" />
+  <project path="frameworks/opt/telephony" name="AOSP-Porting/platform_frameworks_opt_telephony" remote="github" revision="pie" />
+  <project path="hardware/nxp/nfc" name="AOSP-Porting/platform_hardware_nxp_nfc" remote="github" revision="pie" />
+  <project path="hardware/qcom/wlan" name="AOSP-Porting/platform_hardware_qcom_wlan" remote="github" revision="pie" />
+  <project path="packages/apps/Contacts" name="AOSP-Porting/platform_packages_apps_Contacts" remote="github" revision="pie" />
+  <project path="packages/apps/Messaging" name="AOSP-Porting/platform_packages_apps_Messaging" remote="github" revision="pie" />
+  <project path="packages/apps/Settings" name="AOSP-Porting/platform_packages_apps_Settings" remote="github" revision="pie" />
+  <project path="packages/inputmethods/LatinIME" name="AOSP-Porting/platform_packages_inputmethods_LatinIME" remote="github" revision="pie" />
+  <project path="packages/services/Telephony" name="AOSP-Porting/platform_packages_services_Telephony" remote="github" revision="pie" />
+  <project path="system/bt" name="AOSP-Porting/platform_system_bt" remote="github" revision="pie" />
+  <project path="system/core" name="AOSP-Porting/platform_system_core" remote="github" revision="pie" />
+  <project path="system/sepolicy" name="AOSP-Porting/platform_system_sepolicy" remote="github" revision="pie" />
+  <project path="system/vold" name="AOSP-Porting/platform_system_vold" remote="github" revision="pie" />
+
+  <!-- Hardware -->
+  <project path="hardware/qcom/audio-caf/msm8996" name="AOSP-Porting/platform_hardware_qcom_audio" remote="github" revision="pie-caf-8996" />
+  <project path="hardware/qcom/display-caf/msm8996" name="AOSP-Porting/platform_hardware_qcom_display" remote="github" revision="pie-caf-8996" />
+  <project path="hardware/qcom/media-caf/msm8996" name="AOSP-Porting/platform_hardware_qcom_media" remote="github" revision="pie-caf-8996" />
+
+</manifest>
